@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_758E9E84-714F-427C-B12E-B435BCB70081" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_2F873645-9877-4520-9368-FE28A356C31D" name="CalculoPuntosAlcohol" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_758E9E84-714F-427C-B12E-B435BCB70081">
+  <dmn:extensionElements/>
+  <dmn:businessKnowledgeModel id="_8DC9EA4D-FCA9-40A7-9FEF-A1DCA728060E" name="Calculo de puntos por alcohol">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A6489A20-8BEC-4082-B47A-F58073783916" name="Calculo de puntos por alcohol" typeRef="number"/>
+    <dmn:encapsulatedLogic id="_C2E0585D-B487-4AB3-B72E-B1A79BE3937F" kind="FEEL">
+      <dmn:formalParameter id="_28EC35A0-F7C9-49E5-9E60-496EAFD51BE0" name="Nivel alcohol" typeRef="number"/>
+      <dmn:decisionTable id="_38CCC8E9-ED07-41C9-B242-0850F2E8FFE6" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+        <dmn:input id="_D4F64AC8-A4FB-4F47-8186-D25E5BDE0ED6">
+          <dmn:inputExpression id="_776EC561-6DC6-4827-916A-7898B825256C" typeRef="number">
+            <dmn:text>Nivel alcohol</dmn:text>
+          </dmn:inputExpression>
+        </dmn:input>
+        <dmn:output id="_1CF13F03-25E1-48B4-93E4-4EC74AD6C8E3"/>
+        <dmn:annotation name="annotation-1"/>
+        <dmn:rule id="_279C5409-11FF-4951-A8BC-CE1DB2B8E2BE">
+          <dmn:inputEntry id="_190B1B9C-6A88-447F-BCC1-2F293CA17CC0">
+            <dmn:text>[0.2..0.4)</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_D2A53232-C09B-416C-85C5-FF2D621A4C08">
+            <dmn:text>5</dmn:text>
+          </dmn:outputEntry>
+          <dmn:annotationEntry>
+            <dmn:text/>
+          </dmn:annotationEntry>
+        </dmn:rule>
+        <dmn:rule id="_A69A1657-1645-4719-9448-16E8DF520F63">
+          <dmn:inputEntry id="_4BC55B5C-F540-4634-BE73-FF28883B8FC3">
+            <dmn:text>[0.4..0.6)</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_B65BBA66-627A-4C6C-A224-52BE674139DC">
+            <dmn:text>8</dmn:text>
+          </dmn:outputEntry>
+          <dmn:annotationEntry>
+            <dmn:text/>
+          </dmn:annotationEntry>
+        </dmn:rule>
+        <dmn:rule id="_18CFC564-F25E-4865-A683-FA82A23D2745">
+          <dmn:inputEntry id="_B5FCACED-B8A3-4993-86E6-47DD70360330">
+            <dmn:text>&gt;0.6</dmn:text>
+          </dmn:inputEntry>
+          <dmn:outputEntry id="_4304A8C3-2D2B-477A-9725-44CF066C3B69">
+            <dmn:text>10</dmn:text>
+          </dmn:outputEntry>
+          <dmn:annotationEntry>
+            <dmn:text/>
+          </dmn:annotationEntry>
+        </dmn:rule>
+      </dmn:decisionTable>
+    </dmn:encapsulatedLogic>
+  </dmn:businessKnowledgeModel>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_C38432D2-90F3-483A-B554-ACC12EB44D35" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_38CCC8E9-ED07-41C9-B242-0850F2E8FFE6">
+            <kie:width>50</kie:width>
+            <kie:width>285</kie:width>
+            <kie:width>285</kie:width>
+            <kie:width>244</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C2E0585D-B487-4AB3-B72E-B1A79BE3937F">
+            <kie:width>50</kie:width>
+            <kie:width>884</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_8DC9EA4D-FCA9-40A7-9FEF-A1DCA728060E" dmnElementRef="_8DC9EA4D-FCA9-40A7-9FEF-A1DCA728060E" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="596" y="158" width="244" height="62"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
